@@ -79,3 +79,2214 @@ Scraper is running...
 Status code: 200
 Scraper is finish...
 ---------------
+time: 11:30:02
+Scraper is running...
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f1f777f65b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1f777f65b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 13, in <module>
+    run_scraper()
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 6, in run_scraper
+    response = requests.get('http://localhost:5001/get_posts')
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1f777f65b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+time: 11:40:04
+Scraper is running...
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f9f020815b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f9f020815b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 13, in <module>
+    run_scraper()
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 6, in run_scraper
+    response = requests.get('http://localhost:5001/get_posts')
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f9f020815b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+time: 11:50:04
+Scraper is running...
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f188de1b5b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f188de1b5b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 13, in <module>
+    run_scraper()
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 6, in run_scraper
+    response = requests.get('http://localhost:5001/get_posts')
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f188de1b5b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+time: 12:00:03
+Scraper is running...
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f92465975b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f92465975b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 13, in <module>
+    run_scraper()
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 6, in run_scraper
+    response = requests.get('http://localhost:5001/get_posts')
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f92465975b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+time: 14:50:03
+Scraper is running...
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f7bb764a5b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f7bb764a5b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 13, in <module>
+    run_scraper()
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 6, in run_scraper
+    response = requests.get('http://localhost:5001/get_posts')
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f7bb764a5b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+time: 15:00:03
+Scraper is running...
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f6de5a065b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f6de5a065b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 13, in <module>
+    run_scraper()
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 6, in run_scraper
+    response = requests.get('http://localhost:5001/get_posts')
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f6de5a065b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+time: 16:50:04
+Scraper is running...
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f81a15eb5b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f81a15eb5b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 13, in <module>
+    run_scraper()
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 6, in run_scraper
+    response = requests.get('http://localhost:5001/get_posts')
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f81a15eb5b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+time: 17:00:02
+Scraper is running...
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ff123f0f5b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ff123f0f5b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 13, in <module>
+    run_scraper()
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 6, in run_scraper
+    response = requests.get('http://localhost:5001/get_posts')
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ff123f0f5b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+time: 17:10:02
+Scraper is running...
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fbf738e55b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fbf738e55b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 13, in <module>
+    run_scraper()
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 6, in run_scraper
+    response = requests.get('http://localhost:5001/get_posts')
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fbf738e55b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+time: 17:20:03
+Scraper is running...
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f6e9f9635b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f6e9f9635b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 13, in <module>
+    run_scraper()
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 6, in run_scraper
+    response = requests.get('http://localhost:5001/get_posts')
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f6e9f9635b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+time: 17:30:01
+Scraper is running...
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fed3c8785b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fed3c8785b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 13, in <module>
+    run_scraper()
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 6, in run_scraper
+    response = requests.get('http://localhost:5001/get_posts')
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fed3c8785b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+time: 17:40:02
+Scraper is running...
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f81908a25b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f81908a25b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 13, in <module>
+    run_scraper()
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 6, in run_scraper
+    response = requests.get('http://localhost:5001/get_posts')
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f81908a25b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+time: 18:10:03
+Scraper is running...
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f781b6b75b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f781b6b75b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 13, in <module>
+    run_scraper()
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 6, in run_scraper
+    response = requests.get('http://localhost:5001/get_posts')
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f781b6b75b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+time: 18:20:02
+Scraper is running...
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f78edacf5b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f78edacf5b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 13, in <module>
+    run_scraper()
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 6, in run_scraper
+    response = requests.get('http://localhost:5001/get_posts')
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f78edacf5b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+time: 18:30:03
+Scraper is running...
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fc2f5bd75b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fc2f5bd75b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 13, in <module>
+    run_scraper()
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 6, in run_scraper
+    response = requests.get('http://localhost:5001/get_posts')
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fc2f5bd75b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+time: 18:40:02
+Scraper is running...
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f643f8ec5b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f643f8ec5b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 13, in <module>
+    run_scraper()
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 6, in run_scraper
+    response = requests.get('http://localhost:5001/get_posts')
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f643f8ec5b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+time: 18:50:02
+Scraper is running...
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fc2d773d5b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fc2d773d5b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 13, in <module>
+    run_scraper()
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 6, in run_scraper
+    response = requests.get('http://localhost:5001/get_posts')
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fc2d773d5b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+time: 19:00:02
+Scraper is running...
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fe6c53685b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fe6c53685b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 13, in <module>
+    run_scraper()
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 6, in run_scraper
+    response = requests.get('http://localhost:5001/get_posts')
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fe6c53685b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+time: 19:10:03
+Scraper is running...
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fee479735b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fee479735b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 13, in <module>
+    run_scraper()
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 6, in run_scraper
+    response = requests.get('http://localhost:5001/get_posts')
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fee479735b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+time: 19:20:03
+Scraper is running...
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f9ebed425b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f9ebed425b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 13, in <module>
+    run_scraper()
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 6, in run_scraper
+    response = requests.get('http://localhost:5001/get_posts')
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f9ebed425b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+time: 19:30:04
+Scraper is running...
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fe0b7c4f5b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fe0b7c4f5b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 13, in <module>
+    run_scraper()
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 6, in run_scraper
+    response = requests.get('http://localhost:5001/get_posts')
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fe0b7c4f5b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+time: 19:40:20
+Scraper is running...
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f715a88e5b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f715a88e5b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 13, in <module>
+    run_scraper()
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 6, in run_scraper
+    response = requests.get('http://localhost:5001/get_posts')
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f715a88e5b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+time: 19:50:08
+Scraper is running...
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fecfd6c65b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fecfd6c65b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 13, in <module>
+    run_scraper()
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 6, in run_scraper
+    response = requests.get('http://localhost:5001/get_posts')
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fecfd6c65b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+time: 20:00:03
+Scraper is running...
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fe64476c5b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fe64476c5b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 13, in <module>
+    run_scraper()
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 6, in run_scraper
+    response = requests.get('http://localhost:5001/get_posts')
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fe64476c5b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+time: 20:10:02
+Scraper is running...
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f1007b035b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1007b035b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 13, in <module>
+    run_scraper()
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 6, in run_scraper
+    response = requests.get('http://localhost:5001/get_posts')
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1007b035b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+time: 20:40:02
+Scraper is running...
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f6ac926f5b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f6ac926f5b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 13, in <module>
+    run_scraper()
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 6, in run_scraper
+    response = requests.get('http://localhost:5001/get_posts')
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f6ac926f5b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+time: 20:50:04
+Scraper is running...
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f59468625b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f59468625b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 13, in <module>
+    run_scraper()
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 6, in run_scraper
+    response = requests.get('http://localhost:5001/get_posts')
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f59468625b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+time: 21:00:04
+Scraper is running...
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fbde5d7d5b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fbde5d7d5b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 13, in <module>
+    run_scraper()
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 6, in run_scraper
+    response = requests.get('http://localhost:5001/get_posts')
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fbde5d7d5b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+time: 21:10:02
+Scraper is running...
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7faa864d05b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7faa864d05b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 13, in <module>
+    run_scraper()
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 6, in run_scraper
+    response = requests.get('http://localhost:5001/get_posts')
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7faa864d05b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+time: 21:20:02
+Scraper is running...
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f1b5f0155b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b5f0155b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 13, in <module>
+    run_scraper()
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 6, in run_scraper
+    response = requests.get('http://localhost:5001/get_posts')
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b5f0155b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+time: 21:30:04
+Scraper is running...
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f14772275b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f14772275b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 13, in <module>
+    run_scraper()
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 6, in run_scraper
+    response = requests.get('http://localhost:5001/get_posts')
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f14772275b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+time: 21:40:08
+Scraper is running...
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fc3998ad5b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fc3998ad5b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 13, in <module>
+    run_scraper()
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 6, in run_scraper
+    response = requests.get('http://localhost:5001/get_posts')
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fc3998ad5b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+time: 21:50:02
+Scraper is running...
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f81f600b5b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f81f600b5b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 13, in <module>
+    run_scraper()
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 6, in run_scraper
+    response = requests.get('http://localhost:5001/get_posts')
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f81f600b5b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+time: 22:00:01
+Scraper is running...
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f7b32f385b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f7b32f385b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 13, in <module>
+    run_scraper()
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 6, in run_scraper
+    response = requests.get('http://localhost:5001/get_posts')
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f7b32f385b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+time: 22:10:01
+Scraper is running...
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f6d391e75b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f6d391e75b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 13, in <module>
+    run_scraper()
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 6, in run_scraper
+    response = requests.get('http://localhost:5001/get_posts')
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f6d391e75b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+time: 23:20:02
+Scraper is running...
+Status code: 429
+Scraper is finish...
+---------------
+time: 23:30:02
+Scraper is running...
+Status code: 429
+Scraper is finish...
+---------------
+time: 23:40:11
+Scraper is running...
+Status code: 429
+Scraper is finish...
+---------------
+time: 16:30:03
+Scraper is running...
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ff0b13105b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ff0b13105b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 13, in <module>
+    run_scraper()
+  File "/mnt/c/Projects/ApartmentHunterBot/etc/run_scraper.py", line 6, in run_scraper
+    response = requests.get('http://localhost:5001/get_posts')
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/c/Projects/ApartmentHunterBot/myvenv/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /get_posts (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ff0b13105b0>: Failed to establish a new connection: [Errno 111] Connection refused'))

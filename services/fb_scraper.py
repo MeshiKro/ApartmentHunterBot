@@ -87,40 +87,49 @@ def get_env_path() -> str:
 # Load the .env file
 load_dotenv(dotenv_path=get_env_path())
 
-def login_to_facebook(page, username, password):
-    # Navigate to Facebook's website
-    page.goto("https://www.facebook.com/")
+def login_to_facebook(page, username, password, max_attempts=5):
+    attempt = 0
 
-    # Fill in the email/phone field
-    page.fill("input[name='email']", username)
+    while attempt < max_attempts:
+        attempt += 1
+        print(f"Attempt {attempt} to log in...")
 
-    # Fill in the password field
-    page.fill("input[name='pass']", password)
+        # Navigate to Facebook's website
+        page.goto("https://www.facebook.com/")
 
-    # Click on the Login button
-    page.click("button[name='login']")
+        # Fill in the email/phone field
+        page.fill("input[name='email']", username)
 
-    # Wait for the page to load completely after logging in
-    page.wait_for_load_state("networkidle")
-    
-    if page.url == "https://www.facebook.com/":
-        
-        if check_text_presence(page, "See more on Facebook"):
-            login_to_facebook(page, username, password)
-        
+        # Fill in the password field
+        page.fill("input[name='pass']", password)
+
+        # Click on the Login button
+        page.click("button[name='login']")
+
+        # Wait for the page to load completely after logging in
+        page.wait_for_load_state("networkidle")
+
+        if page.url == "https://www.facebook.com/":
+            # Check if there's a specific indicator for failed login
+            if check_text_presence(page, "See more on Facebook"):
+                print("Login failed, retrying...")
+                time.sleep(5)  # Wait a bit before retrying
+            else:
+                print("Login successful")
+                return
         else:
-            print("Login successful")
-            # page.goto("https://www.facebook.com/groups/647901439404148/?sorting_setting=CHRONOLOGICAL")
-        
-    else:
-        print("Login failed")
+            print("Login failed. Unexpected URL:", page.url)
+            time.sleep(5)  # Wait a bit before retrying
+
+    # Raise a general exception after all attempts fail
+    raise Exception("Unable to log in to Facebook after 5 attempts.")
 
 
 def run_multiple_logins(times, username, password):
     # Create a Playwright session
     with sync_playwright() as p:
         for i in range(times):
-            browser = p.chromium.launch(headless=True)  # Set headless=False to see the login process
+            browser = p.chromium.launch(headless=False)  # Set headless=False to see the login process
             page = browser.new_page()
             
             print(f"Attempt {i + 1}: Logging in...")
@@ -363,6 +372,8 @@ def collect_group_posts_to_sql_db(page, group_url, max_posts=10):
                     # Send post to GPT:
                     extracted_info = extract_info(post_content)
                     
+                    print(f"extracted_info = {extracted_info}")
+                    
                     if 'false' not in str.lower( extracted_info):
                         extracted_info_in_json = json.loads(extracted_info)
                         '''
@@ -377,9 +388,9 @@ def collect_group_posts_to_sql_db(page, group_url, max_posts=10):
                         '''
                         extracted_info_in_json['url'] = post_link
                         extracted_info_in_json['description'] = post_content
-                        # print(extracted_info_in_json)
+                        print(extracted_info_in_json)
                         
-                        save_post_on_db(extracted_info_in_json)
+                        # save_post_on_db(extracted_info_in_json)
                         
                         print(":: END OF post_content ::")
                         # posts.append(post_text)
@@ -415,6 +426,7 @@ def scrape_and_store_posts():
         # Save posts on db
         print("Scraping posts...")
         for link in group_links:
+            print(f'link= {link}')
             try:
                 collect_group_posts_to_sql_db(page, link)
             except Exception as e:

@@ -27,6 +27,7 @@ def check_exists(str_to_check):
     
     # result = db.session.query(User).filter(User.email.ilike(substring)).all()
 
-    result = db.session.query(Property).filter(Property.url.ilike(str_to_check)).first()
+    # result = db.session.query(Property).filter(Property.url.ilike(str_to_check)).first()
     
-    return result
+    # return result
+    return False

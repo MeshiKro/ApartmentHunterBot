@@ -1,108 +1,110 @@
 import os
-import tiktoken
-from openai import OpenAI
+# import openai
 import json
+from openai import OpenAI
+from dotenv import load_dotenv
 
-api_key = os.getenv("OPENAI_API_KEY")
+# Set the OpenAI API key
+# openai.api_key = os.environ.get("OPENAI_API_KEY"))
+load_dotenv()
 
-client = OpenAI(api_key=api_key)
+client = OpenAI(
+    api_key=os.environ.get("OPENAI_API_KEY")  # This is the default and can be omitted
+)
+
 
 def extract_info(post_text):
-    messages = [    
-    {
-        "role": "user",
-        "content": """
-            You are a smart real estate agent. Return answers in JSON format. If the post offers an apartment for rent, return the following information:
+    # Define the messages for the conversation
 
-            rooms (number of rooms, can be a float)
-            size (area in square meters, integer)
-            price (price in NIS, integer)
-            city (city name in Hebrew)
-            address (street name in Hebrew; if missing, return null)
-            phone (phone number; if missing, return null)
-            If the post does not offer an apartment for rent, return false.
-            If the city is not mentioned, guess it based on the area.
-            
-            if post is about anything except offer for an apartment for rent, return {"result": "False"}
-        """
-    },
-    {
-        "role": "user",
-        "content": f'Post: {post_text}'
-    }
-]
+    # Call the OpenAI API
+    # response = client.chat.completions.create(
+    #     model="gpt-4",
+    #     messages=messages
+    # )
     
-    # Get the encoding 
-    enc = tiktoken.encoding_for_model("gpt-4")    
-    tokens = enc.encode(json.dumps(messages))
-    token_count = len(tokens)
+    chat_completion = client.chat.completions.create(
+    messages = [
+        {
+            "role": "system",
+            "content": """
+            Return responses in JSON format only, valid for Python's json.loads. 
 
-    print(f"\nNumber of tokens: {token_count}\n")
-    
-    response = client.chat.completions.create(
-        model="gpt-4o-mini",
-        response_format={"type": "json_object"},
-        messages=messages,
-        max_tokens=150
+            If the post offers an apartment for rent, return:
+            {
+                "rooms": (float),
+                "size": (int),
+                "price": (int or null),
+                "city": (string, Hebrew),
+                "address": (string or null, Hebrew),
+                "phone": (string or null)
+            }
+
+            If the post is not about renting an apartment, return:
+            {"result": "False"}
+
+            Do not include additional text, comments, or formatting.
+            """
+        }
+    ],
+        model="gpt-4o",
     )
-    
-    result = response.choices[0].message.content
-    
-    tokens = enc.encode(json.dumps(result))
-    total_token =  token_count + len(tokens)
 
-    print(f"\nNumber of TOTAL tokens: {total_token}\n")
+    # Extract the response content    
+    result = chat_completion.choices[0].message.content
+    
+    # Print the total number of tokens
+    # tokens = chat_completion["usage"]["total_tokens"]
+    # print(f"\nNumber of TOTAL tokens: {tokens}\n")
+
     return result
 
-# דוגמה לפוסט נדל"ן
-post_text1 = """ 
+
+if __name__ == "__main__":
+    # Examples of real estate posts
+    examples = [
+        """
         היי לכולם
         אני ובן הזוג שלי מחפשים דירה/יחידת דיור
         עד 4200 ש״ח, כניסה בסביבות דצמבר
         עדיפות למרוהטת 
         תודה מראש
-"""
+        """,
+        """
+        להשכרה דירת 3 חדרים בשכונת תל גנים המבוקשת בגבעתיים 
+        דירה מרווחת, מוארת ונעימה בגודל של כ- 70 מ"ר, עם פרקט ומזגנים בחדרים.
+        בקרבת גנים, בתי"ס ומרכזי קניות, עם יציאות מעולות לת"א. 
+        כניסה מיידית!
+        שכ"ד: 5,200 ש"ח לחודש.
+        לפרטים ותיאום ביקור:
+        נאוה - 052-3901736 
+        """,
+        """
+        מחפשים דירה משוכרת 7000₪? 
+        מחיר לדירה חדשה 2.790.000 ש"ח
+        למכירה בבלעדיות בשכונת נגבה דירת 4 חדרים קומה 1 עורפית 84 מטר 
+        מרפסת שמש 10 מטר אחרי פינוי בינוי! 
+        שוכרים שרוצים להישאר! 
+        לפרטים נוספים שלומי מאנה 
+        053-439-4187
+        המתווך החזק
+        """,
+        """
+        אתה הראש אתה השם 
+        תזכורת קטנה 
+        לכל מי ששכח לרגע שיש מנהיג לעולם 
+        """
+    ]
 
-post_text2 = """
-להשכרה דירת 3 חדרים בשכונת תל גנים המבוקשת בגבעתיים 
- דירה מרווחת, מוארת ונעימה בגודל של כ- 70 מ"ר, עם פרקט ומזגנים בחדרים.
- בקרבת גנים, בתי"ס ומרכזי קניות, עם יציאות מעולות לת"א. 
- כניסה מיידית!
- שכ"ד: 5,200 ש"ח לחודש.
- לפרטים ותיאום ביקור:
- נאוה - 052-3901736 
-"""
-
-post_text3 = """
-מחפשים דירה משוכרת 7000₪? 
- מחיר לדירה חדשה 2.790.000 ש"ח
- למכירה בבלעדיות בשכונת נגבה דירת 4 חדרים קומה 1 עורפית 84 מטר 
- מרפסת שמש 10 מטר אחרי פינוי בינוי! 
- שוכרים שרוצים להישאר! 
- לפרטים נוספים שלומי מאנה 
- 053-439-4187
- המתווך החזק
-"""
-
-post_text4 = """
-    אתה הראש אתה השם 
-    תזכורת קטנה 
-    לכל מי ששכח לרגע שיש מנהיג לעולם 
-"""
-
-if __name__ == "__main__":
-    examples = []
-    examples.append(post_text1)
-    examples.append(post_text2)
-    examples.append(post_text3)
-    examples.append(post_text4)
-
-
-    for i in range(len(examples)):
+    # Process each example
+    for i, example in enumerate(examples):
         print("-----")
-        print(f"Example: {examples[i]}\n")
-        extracted_info = extract_info(examples[i])
-        print(f"extracted_info = \n{extracted_info}")
+        print(f"Example {i+1}: {example.strip()}\n")
+        extracted_info = extract_info(example)
+        print(f"Extracted Info = \n{extracted_info}")
 
-    extracted_info_in_json = json.loads(extracted_info)
-# print(extracted_info_in_json)
+        # Try to parse the response as JSON
+        try:
+            extracted_info_in_json = json.loads(extracted_info)
+            print(f"Extracted Info in JSON:\n{extracted_info_in_json}\n")
+        except json.JSONDecodeError as e:
+            print(f"Failed to parse JSON: {e}")
