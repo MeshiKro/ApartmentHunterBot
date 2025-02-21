@@ -1,7 +1,65 @@
-.venv/
-.myvenv/
-myvenv/
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.db
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv
+venv
+venv_etl
+myvenv
+
+# VS Code settings and workspace files
+.vscode/
+*.code-workspace
+
+# Environment variables
 .env
 
-*.pyc
-__pycache__/
+# Logs and debug files
+*.log
+debug.log
+nohup.out
+
+# Pytest cache
+.pytest_cache/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+*.egg
+*.whl
+
+# CSV or data files
+*.csv
+*.json
+*.xml
+*.xlsx
+
+# Miscellaneous
+*.bak
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Ignore specific scripts
+build-and-delete-old-images.sh
+
+# Ignore compiled files
+*.so
+*.dll
+*.exe
+
+# Ignore test results
+test_results/
+coverage/
+htmlcov/
+coverage.xml

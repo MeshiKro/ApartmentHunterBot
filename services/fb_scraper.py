@@ -7,11 +7,12 @@ from playwright.sync_api import sync_playwright
 from dotenv import load_dotenv
 import os, time, random
 # from etc import email_functions
-from etc import email_functions
-from etc.openai_model import extract_info
+from utils import email_functions
+from utils.openai_model import extract_info
 from flaskr.data_access.post_repository import check_exists, save_post_on_db
 from flaskr.database import mongo
 from flask import current_app
+from datetime import datetime, timezone
 
 from flaskr.models.post import get_posts_by_filter, insert_post, update_posts_by_filter
 # from flaskr.extensions import socketio  # Import socketio
@@ -97,11 +98,17 @@ def login_to_facebook(page, username, password, max_attempts=5):
         # Navigate to Facebook's website
         page.goto("https://www.facebook.com/")
 
+        page.wait_for_timeout(5000)  # Wait 5 seconds before retrying
+
         # Fill in the email/phone field
         page.fill("input[name='email']", username)
 
+        page.wait_for_timeout(5000)  # Wait 5 seconds before retrying
+        
         # Fill in the password field
         page.fill("input[name='pass']", password)
+
+        page.wait_for_timeout(5000)  # Wait 5 seconds before retrying
 
         # Click on the Login button
         page.click("button[name='login']")
@@ -109,6 +116,8 @@ def login_to_facebook(page, username, password, max_attempts=5):
         # Wait for the page to load completely after logging in
         page.wait_for_load_state("networkidle")
 
+        page.wait_for_timeout(3000)  # Wait 5 seconds before retrying
+        
         if page.url == "https://www.facebook.com/":
             # Check if there's a specific indicator for failed login
             if check_text_presence(page, "See more on Facebook"):
@@ -321,9 +330,10 @@ def run_scraper():
     
     return new_posts
 
-def collect_group_posts_to_sql_db(page, group_url, max_posts=10):
+def collect_group_posts_to_sql_db(page, group_url, max_posts=10, run_id=None):
     logging.info(f"Collecting posts from {group_url}")
-    page.goto(group_url) 
+    print(f"Collecting posts from {group_url}")
+    page.goto(group_url, wait_until="networkidle")
     time.sleep(random.randint(5, 10))  # Wait for the page to load
     
     post_elements = page.query_selector_all("div[role='article']")
@@ -365,17 +375,18 @@ def collect_group_posts_to_sql_db(page, group_url, max_posts=10):
                     _post = {
                         "link": post_link,
                         "content": post_content,
-                        "hasBeenSent": False
+                        "hasBeenSent": False,
+                        "date_posted": datetime.now(),
+                        "run_id": run_id
                     }
-                    insert_post(_post)
                     
                     # Send post to GPT:
-                    extracted_info = extract_info(post_content)
+                    extracted_info_in_json = extract_info(post_content)
                     
-                    print(f"extracted_info = {extracted_info}")
+                    print(f"extracted_info_in_json = {extracted_info_in_json}")
                     
-                    if 'false' not in str.lower( extracted_info):
-                        extracted_info_in_json = json.loads(extracted_info)
+                    if 'false' not in str.lower(json.dumps(extracted_info_in_json)):
+                        # extracted_info_in_json = json.loads(extracted_info)
                         '''
                         extracted_info_in_json = {
                             'price': 5000,
@@ -393,11 +404,13 @@ def collect_group_posts_to_sql_db(page, group_url, max_posts=10):
                         # save_post_on_db(extracted_info_in_json)
                         
                         print(":: END OF post_content ::")
-                        # posts.append(post_text)
                         print("---\n")
-                        # print(f"{post_link}")
-                        # print(f"{post_content}")  # Print or store the post content
+                        
+                        
+                        _post["rent"] = extracted_info_in_json
                 
+                    insert_post(_post)
+                    
         except Exception as e:
             print(f"Error extracting post: {e}")
             print("Detailed traceback:")
@@ -410,10 +423,13 @@ def scrape_and_store_posts():
     start_time = time.time()
     # new_posts = make_login_and_get_new_posts() 
     
+    import uuid
+
+    run_id = str(uuid.uuid4())
 
     with sync_playwright() as p:
         print("Starting browser...")
-        browser = p.chromium.launch(headless=True)
+        browser = p.chromium.launch(headless=False)
         page = browser.new_page()
         
         # Login:
@@ -428,7 +444,7 @@ def scrape_and_store_posts():
         for link in group_links:
             print(f'link= {link}')
             try:
-                collect_group_posts_to_sql_db(page, link)
+                collect_group_posts_to_sql_db(page, link, run_id)
             except Exception as e:
                 logging.error(f"Error scraping posts from {link}: {e}")
                 time.sleep(random.randint(10, 30))

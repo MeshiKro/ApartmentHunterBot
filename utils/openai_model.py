@@ -22,41 +22,56 @@ def extract_info(post_text):
     #     messages=messages
     # )
     
-    chat_completion = client.chat.completions.create(
-    messages = [
-        {
-            "role": "system",
-            "content": """
-            Return responses in JSON format only, valid for Python's json.loads. 
-
-            If the post offers an apartment for rent, return:
+    try:
+        messages = [
             {
-                "rooms": (float),
-                "size": (int),
-                "price": (int or null),
-                "city": (string, Hebrew),
-                "address": (string or null, Hebrew),
-                "phone": (string or null)
+                "role": "system",
+                "content": """
+                Extract rental information from text.
+                Respond in JSON format only, valid for Python's json.loads.
+                
+                If the text describes an apartment for rent, return:
+                {
+                    "rooms": (float),
+                    "size": (int),
+                    "price": (int or null),
+                    "city": (string, Hebrew),
+                    "address": (string or null, Hebrew),
+                    "phone": (string or null)
+                }
+
+                If it does not describe an apartment for rent, return:
+                {"result": "False"}.
+
+                Do not include anything else.
+                """
+            },
+            {
+                "role": "user",
+                "content": f"{post_text}"
             }
+        ]
+        
+        response = client.chat.completions.create(
+            model='gpt-4',
+            messages=messages
+        )
 
-            If the post is not about renting an apartment, return:
-            {"result": "False"}
+        # Extract the content of the response
+        result = response.choices[0].message.content
 
-            Do not include additional text, comments, or formatting.
-            """
-        }
-    ],
-        model="gpt-4o",
-    )
+        # Validate that the result is a valid JSON
+        parsed_result = json.loads(result)  # Ensure the result is JSON compatible
+        
+        return parsed_result
 
-    # Extract the response content    
-    result = chat_completion.choices[0].message.content
-    
-    # Print the total number of tokens
-    # tokens = chat_completion["usage"]["total_tokens"]
-    # print(f"\nNumber of TOTAL tokens: {tokens}\n")
+    except json.JSONDecodeError as e:
+        print("The response is not valid JSON:", e)
+        return {"error": "Invalid JSON response from OpenAI."}
 
-    return result
+    except Exception as e:
+        print("An error occurred:", e)
+        return {"error": str(e)}
 
 
 if __name__ == "__main__":

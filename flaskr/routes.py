@@ -37,19 +37,23 @@ def links():
 def scrape_posts():
     global is_running
     
-    # Lock the code to ensure the process runs only once
-    with lock:
-        if is_running:
-            return jsonify({"status": "error", "message": "Scraper is already running. Please wait until it finishes."}), 429
-
-        # Mark that the scraper has started running
-        is_running = True
-    
-    logging.info("Scraping posts...")
     try:
         scrape_and_store_posts()
+        return jsonify({"status": "error", "message": "Scraper is already running. Please wait until it finishes."}), 429
+
+    # Lock the code to ensure the process runs only once
+    # with lock:
+    #     if is_running:
+    #         return jsonify({"status": "error", "message": "Scraper is already running. Please wait until it finishes."}), 429
+
+    #     # Mark that the scraper has started running
+    #     is_running = True
+    
+    # logging.info("Scraping posts...")
+    # try:
+    #     scrape_and_store_posts()
         
-        return jsonify({"message": "Scraping and saving posts completed"}), 200
+    #     return jsonify({"message": "Scraping and saving posts completed"}), 200
         
 
 
@@ -62,8 +66,8 @@ def scrape_posts():
     
     finally:
         # Release the lock when scraper finishes
-        with lock:
-            is_running = False
+        # with lock:
+        #     is_running = False
         logging.info("Scraper finished running.")
 
 def run_scraper_route():
