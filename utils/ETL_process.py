@@ -32,42 +32,92 @@ from ETL.models.Post import Post
 
 def extract_data(limit=20):
     """Extract data from MongoDB and return a list of dictionaries."""
-    # Connect to MongoDB
-    client = MongoClient(os.environ.get("MONGO_URL"))
-    db = client["posts"]
-    collection = db["collection"]
+    try:
+        # Connect to MongoDB
+        logging.info("Connecting to MongoDB.")
+        client = MongoClient(os.environ.get("MONGO_URL"))
+        db = client["posts"]
+        collection = db["collection"]
+        logging.info("Connected to MongoDB successfully.")
 
-    # Fetch data (limit to 20 records by default)
-    data = list(collection.find().limit(limit))
-    # data = list(collection.find())
-    return data
+        # Fetch data (limit to 20 records by default)
+        logging.debug(f"Fetching data from MongoDB with limit={limit}.")
+        data = list(collection.find().limit(limit))
+        logging.info(f"Fetched {len(data)} documents from MongoDB.")
+        
+        return data
 
+    except Exception as e:
+        logging.error(f"Error during MongoDB extraction: {e}")
+        raise
+
+    finally:
+        client.close()
+        logging.info("MongoDB connection closed.")
 
 def transform_data(data: list) -> list:
-    """Transform - Filter, extract values using Regex, and convert to SQLModel objects."""
-    df = pd.DataFrame(data)  # Convert to DataFrame for easier processing
+    import math
+    import pandas as pd
 
-    # Use Regex functions to extract values from the 'content' field
+    # Convert list of dictionaries into a DataFrame
+    df = pd.DataFrame(data)
+
+    # Extract 'price', 'rooms', and 'size' using Regex and store in separate columns
     df[['price', 'rooms', 'size']] = df['content'].apply(lambda x: pd.Series(extract_rental_info(x)))
 
-    # Filter only the columns relevant to the Post model
+    # Keep only the relevant columns
     df = df[['content', 'rooms', 'size', 'price']]
 
-    # Convert each row into a SQLModel object
-    """Transform - Filter, clean, and convert MongoDB documents into SQLModel objects."""
+    # Convert each row of the DataFrame into a SQLModel object
     processed_data = []
 
     for i, row in df.iterrows():
         row_data = row.to_dict()
-        row_data["mongo_id"] = str(data[i]["_id"])  # <-- Store MongoDB _id in mongo_id field
+        row_data["mongo_id"] = str(data[i]["_id"])  # Store MongoDB _id in mongo_id field
 
+        # Replace NaN values with None
         row_data["rooms"] = None if pd.isna(row_data.get("rooms")) else row_data.get("rooms")
         row_data["size"] = None if pd.isna(row_data.get("size")) else row_data.get("size")
         row_data["price"] = None if pd.isna(row_data.get("price")) else row_data.get("price")
 
+        # Create a Post object from the row data
         processed_data.append(Post(**row_data))
 
     return processed_data
+
+
+def insert_data(engine, data: list):
+    """Load - Insert processed SQLModel objects into PostgreSQL using ON CONFLICT DO NOTHING."""
+    logging.info(f"Attempting to insert {len(data)} records into PostgreSQL.")  # Log the number of records to insert
+
+    try:
+        create_table()  # Ensure the table exists before inserting data
+
+        with Session(engine) as session:  # Open a database session
+            # Prepare bulk insert statement using SQLAlchemy's insert function
+            stmt = insert(data[0].__class__).values([obj.model_dump() for obj in data])  # Convert each object to a dictionary
+            
+            # Use ON CONFLICT DO NOTHING to avoid duplicate inserts based on mongo_id
+            stmt = stmt.on_conflict_do_nothing(index_elements=["mongo_id"])
+
+            result = session.exec(stmt)  # Execute the statement and capture the result
+            session.commit()  # Commit the transaction
+
+            # Calculate the number of inserted rows (rowcount = number of rows affected)
+            inserted_count = result.rowcount if result and result.rowcount is not None else 0
+
+            # Log the number of records actually inserted or indicate that no records were inserted
+            if inserted_count > 0:
+                logging.info(f"{inserted_count} records actually inserted into PostgreSQL.")  # Successful insertion
+            else:
+                logging.info("No new records were inserted due to duplicates.")  # No insertion due to duplicates
+
+    except Exception as e:
+        logging.error(f"PostgreSQL insertion failed: {e}")  # Log any exception that occurs
+        raise  # Re-raise the exception to propagate the error
+
+
+
     
 
 def connect_to_postgres():
@@ -79,19 +129,6 @@ def connect_to_postgres():
     return engine
 
 
-def insert_data(engine, data: list):
-    """Load - Insert processed SQLModel objects into PostgreSQL using ON CONFLICT DO NOTHING."""
-    create_table()  # Ensure the table exists
-
-    with Session(engine) as session:
-        # Prepare bulk insert using SQLAlchemy insert
-        stmt = insert(data[0].__class__).values([obj.model_dump() for obj in data])  # Use the class of the first object
-        stmt = stmt.on_conflict_do_nothing(index_elements=["mongo_id"])  # Avoid duplicate mongo_id
-
-        # Execute the statement
-        session.execute(stmt)
-        session.commit()
-        print(f"{len(data)} records inserted successfully!")
 
 def create_table():
     """Create tables based on SQLModel definitions"""
