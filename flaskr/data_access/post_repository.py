@@ -23,11 +23,5 @@ def save_post_on_db(data):
 
 # Check if post exists
 def check_exists(str_to_check):
-    str_to_check = f"%{str_to_check}%"
-    
-    # result = db.session.query(User).filter(User.email.ilike(substring)).all()
-
-    # result = db.session.query(Property).filter(Property.url.ilike(str_to_check)).first()
-    
-    # return result
-    return False
+    exists = db.session.query(Property.id).filter(Property.url == str_to_check).first()
+    return exists is not None

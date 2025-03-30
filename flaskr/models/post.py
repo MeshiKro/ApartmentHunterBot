@@ -92,3 +92,16 @@ def delete_post(post_id):
     
     pass
    
+def check_exists(url_substring):
+    """
+    Checks if a post whose URL contains the given substring exists in MongoDB.
+
+    Parameters:
+    - url_substring: Substring of the URL to search for.
+
+    Returns:
+    - True if such a post exists, False otherwise.
+    """
+    existing_post = mongo.db.collection.find_one({"link": {"$regex": url_substring}})
+    return existing_post is not None
+

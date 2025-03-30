@@ -8,13 +8,13 @@ from dotenv import load_dotenv
 import os, time, random
 # from etc import email_functions
 from utils import email_functions
-from utils.openai_model import extract_info
-from flaskr.data_access.post_repository import check_exists, save_post_on_db
+# from utils.openai_model import extract_info
+from flaskr.data_access.post_repository import  save_post_on_db
 from flaskr.database import mongo
 from flask import current_app
 from datetime import datetime, timezone
 
-from flaskr.models.post import get_posts_by_filter, insert_post, update_posts_by_filter
+from flaskr.models.post import check_exists, get_posts_by_filter, insert_post, update_posts_by_filter
 # from flaskr.extensions import socketio  # Import socketio
 
 group_links = [
@@ -100,6 +100,7 @@ def login_to_facebook(page, username, password, max_attempts=5):
 
         page.wait_for_timeout(5000)  # Wait 5 seconds before retrying
 
+        print(f"Filling email with: {username}")
         # Fill in the email/phone field
         page.fill("input[name='email']", username)
 
@@ -138,7 +139,7 @@ def run_multiple_logins(times, username, password):
     # Create a Playwright session
     with sync_playwright() as p:
         for i in range(times):
-            browser = p.chromium.launch(headless=False)  # Set headless=False to see the login process
+            browser = p.chromium.launch(headless=True)  # Set headless=False to see the login process
             page = browser.new_page()
             
             print(f"Attempt {i + 1}: Logging in...")
@@ -330,6 +331,43 @@ def run_scraper():
     
     return new_posts
 
+def scrape_and_store_posts():
+    print(f"\n---------\nscrape_and_store_posts()\n---------\n")
+    start_time = time.time()
+    
+    import uuid
+
+    run_id = str(uuid.uuid4())
+    total_posts_scraped = 0
+
+    with sync_playwright() as p:
+        print("Starting browser...")
+        browser = p.chromium.launch(headless=True)
+        page = browser.new_page()
+        
+        # Login:
+        username = os.getenv("FB_USERNAME")
+        password = os.getenv("FB_PASSWORD")
+        
+        print("Logging in...")
+        login_to_facebook(page, username, password)
+        
+        # Save posts on db
+        print("Scraping posts...")
+        for link in group_links:
+            print("------------")
+            print(f'link= {link}')
+            try:
+                posts_scraped = collect_group_posts_to_sql_db(page, link, run_id=run_id)
+                print(f"Total posts scraped from {link}: {posts_scraped}")
+                total_posts_scraped += posts_scraped
+            except Exception as e:
+                logging.error(f"Error scraping posts from {link}: {e}")
+                time.sleep(random.randint(10, 30))
+                continue
+    
+    print(f"Scraping complete. Total posts scraped: {total_posts_scraped}")
+
 def collect_group_posts_to_sql_db(page, group_url, max_posts=10, run_id=None):
     logging.info(f"Collecting posts from {group_url}")
     print(f"Collecting posts from {group_url}")
@@ -344,34 +382,26 @@ def collect_group_posts_to_sql_db(page, group_url, max_posts=10, run_id=None):
         time.sleep(random.randint(2, 4))  # Give some time for posts to load
         post_elements = page.query_selector_all("div[role='article']")
             
-            
     # Clear empty posts
     post_elements = [post for post in post_elements if len(post.inner_text()) > 0]
     
     logging.info(f"Collected {len(post_elements)} posts from {group_url}")
     
-      
+    scraped_post_count = 0
     for post in post_elements:
         logging.info(f"Collecting post from {group_url}")
         try:
-            # Click on the "See More" button if it exists
             click_on_see_more_button(page=page, post=post)
-            
-            # Extract text content from the post
             post_text = post.inner_text()
             post_link = get_post_link(post)
             post_url_id = post_link.split("/")[-1]
             
-
-            # if len(post_text) > 0 and not post_link_exists:    
             if len(post_text) > 0:   
                 post_content_element = post.query_selector("div[data-ad-preview='message']")
-                if post_content_element and not check_exists(f'posts/{post_url_id}'):  
+                check_if_post_exists_in_db = check_exists(f'posts/{post_url_id}')
+                if post_content_element and not check_if_post_exists_in_db:  
                     post_content = post_content_element.inner_text()
-                    # print(f"---\npost_text[:10]= {post_text[:10]}")
-                    print(f"---\npost_text[:10]= {post_content[:10]}")
                     post_content_exists = mongo.db.collection.find_one({"content": post_content})
-                    # if (not post_contain_unwanted_words(post_content)) and not post_content_exists:
                     _post = {
                         "link": post_link,
                         "content": post_content,
@@ -379,77 +409,16 @@ def collect_group_posts_to_sql_db(page, group_url, max_posts=10, run_id=None):
                         "date_posted": datetime.now(),
                         "run_id": run_id
                     }
-                    
-                    # Send post to GPT:
-                    extracted_info_in_json = extract_info(post_content)
-                    
-                    print(f"extracted_info_in_json = {extracted_info_in_json}")
-                    
-                    if 'false' not in str.lower(json.dumps(extracted_info_in_json)):
-                        # extracted_info_in_json = json.loads(extracted_info)
-                        '''
-                        extracted_info_in_json = {
-                            'price': 5000,
-                            'rooms': 3,
-                            'size': 70,
-                            'city': 'Givataim',
-                            'address':'shenkin',
-                            'url': 'www....'
-                        }
-                        '''
-                        extracted_info_in_json['url'] = post_link
-                        extracted_info_in_json['description'] = post_content
-                        print(extracted_info_in_json)
-                        
-                        # save_post_on_db(extracted_info_in_json)
-                        
-                        print(":: END OF post_content ::")
-                        print("---\n")
-                        
-                        
-                        _post["rent"] = extracted_info_in_json
-                
                     insert_post(_post)
+                    scraped_post_count += 1
+
                     
         except Exception as e:
             print(f"Error extracting post: {e}")
-            print("Detailed traceback:")
             traceback.print_exc()
-
             
-
-def scrape_and_store_posts():
-    print(f"\n---------\nscrape_and_store_posts()\n---------\n")
-    start_time = time.time()
-    # new_posts = make_login_and_get_new_posts() 
-    
-    import uuid
-
-    run_id = str(uuid.uuid4())
-
-    with sync_playwright() as p:
-        print("Starting browser...")
-        browser = p.chromium.launch(headless=False)
-        page = browser.new_page()
-        
-        # Login:
-        username = os.getenv("FB_USERNAME")
-        password = os.getenv("FB_PASSWORD")
-        
-        print("Logging in...")
-        login_to_facebook(page, username, password)
-        
-        # Save posts on db
-        print("Scraping posts...")
-        for link in group_links:
-            print(f'link= {link}')
-            try:
-                collect_group_posts_to_sql_db(page, link, run_id)
-            except Exception as e:
-                logging.error(f"Error scraping posts from {link}: {e}")
-                time.sleep(random.randint(10, 30))
-                continue
-            
+    print(f"Number of posts collected and inserted: {scraped_post_count}")
+    return scraped_post_count
 
 async def main():
 

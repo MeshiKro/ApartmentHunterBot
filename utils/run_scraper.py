@@ -3,7 +3,7 @@ from datetime import datetime
 
 def run_scraper():
     # response = requests.get('http://localhost:5000/run_scraper')
-    response = requests.get('http://localhost:5000/get_posts')
+    response = requests.get('http://127.0.0.1:5000/get_posts')
     print(f"Status code: {response.status_code}")
 
 if __name__ == '__main__':
