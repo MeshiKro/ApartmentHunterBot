@@ -18,17 +18,9 @@ from flaskr.models.post import check_exists, get_posts_by_filter, insert_post, u
 # from flaskr.extensions import socketio  # Import socketio
 
 group_links = [
-               "https://www.facebook.com/groups/1870209196564360/?sorting_setting=CHRONOLOGICAL",
-                "https://www.facebook.com/groups/520940308003364/?sorting_setting=CHRONOLOGICAL",
-               "https://www.facebook.com/groups/186810449287215/?sorting_setting=CHRONOLOGICAL",
-               "https://www.facebook.com/groups/2098391913533248/?sorting_setting=CHRONOLOGICAL",
-               "https://www.facebook.com/groups/1998122560446744/?sorting_setting=CHRONOLOGICAL",
-               "https://www.facebook.com/groups/1424244737803677/?sorting_setting=CHRONOLOGICAL",
-               "https://www.facebook.com/groups/1068642559922565/?sorting_setting=CHRONOLOGICAL",
-               "https://www.facebook.com/groups/1380680752778760/?sorting_setting=CHRONOLOGICAL",
-               "https://www.facebook.com/groups/654949551249110/?sorting_setting=CHRONOLOGICAL",
-               "https://www.facebook.com/groups/564985183576779/?sorting_setting=CHRONOLOGICAL"
-               ]
+    "https://www.facebook.com/groups/150903262296830/?sorting_setting=CHRONOLOGICAL",   # דירות להשכרה בטירת כרמל
+    "https://www.facebook.com/groups/171730669920083/?sorting_setting=CHRONOLOGICAL"    # דירות להשכרה בין חברים טירת כרמל
+]
 
 filters = []
 
