@@ -6,6 +6,7 @@ from pymongo.errors import PyMongoError
 from flaskr.models import post
 from flaskr.models.SQL.property import Property
 from flaskr.database import mySQL_db
+from flaskr.supabase_client import supabase_client
 from datetime import datetime, timedelta
 from pytz import timezone
 import logging
@@ -90,30 +91,43 @@ def run_scraper_route():
 
 @bp.route("/add_post", methods=['POST'])
 def add_property():
-    new_property = Property(
-        description='A beautiful 3-bedroom house',
-        price=300000.00,
-        size=120.50,
-        rooms=3,
-        city='givataim',
-        address="Shenkin",
-        url='http://example.com/property/1234',
-        sent=False
-    )
-    
-    mySQL_db.session.add(new_property)
-    mySQL_db.session.commit()
-    
-    return f'new_property = {new_property}'
+    try:
+        # Use Supabase REST API instead of direct database connection
+        property_data = {
+            'description': 'A beautiful 3-bedroom house',
+            'price': 300000.00,
+            'size': 120.50,
+            'rooms': 3,
+            'city': 'givataim',
+            'address': "Shenkin",
+            'url': 'http://example.com/property/1234',
+            'sent': False
+        }
+        
+        success = supabase_client.insert_property(property_data)
+        
+        if success:
+            return jsonify({"status": "success", "message": "Property added successfully"})
+        else:
+            return jsonify({"status": "error", "message": "Failed to add property"}), 500
+            
+    except Exception as e:
+        logging.error(f"Error adding property: {e}")
+        return jsonify({"status": "error", "message": str(e)}), 500
 
 @bp.route('/print_properties')
 def print_properties():
-    properties = Property.query.all()
+    try:
+        # Use Supabase REST API instead of direct database connection
+        properties = supabase_client.get_properties(limit=100)
 
-    for property in properties:
-        print(f'ID: {property.id}, Description: {property.description}, Price: {property.price}')
+        for property in properties:
+            print(f'ID: {property.get("id")}, Description: {property.get("description")}, Price: {property.get("price")}')
 
-    return "Check your console for the properties."
+        return f"Found {len(properties)} properties. Check your console for details."
+    except Exception as e:
+        logging.error(f"Error getting properties: {e}")
+        return f"Error getting properties: {str(e)}"
 
 @bp.route('/apartments')
 def index():
@@ -121,21 +135,30 @@ def index():
 
 @bp.route('/api/apartments')
 def get_apartments():
-    properties = Property.query.order_by(desc(Property.created_at)).all()
-    
-    apartments = [
-        {
-            'description': p.description,
-            'address': p.address,
-            'price': float(p.price) if p.price is not None else None,
-            'rooms': p.rooms,
-            'size': p.size,
-            'phone': p.phone,
-            'city': p.city,
-            'url': p.url,
-            'created_at': p.created_at.isoformat()
-        } for p in properties
-    ]
+    try:
+        # Use Supabase REST API instead of direct database connection
+        properties = supabase_client.get_properties(limit=100, order_by="created_at.desc")
+        
+        apartments = [
+            {
+                'description': p.get('description', ''),
+                'address': p.get('address', ''),
+                'price': float(p.get('price', 0)) if p.get('price') is not None else None,
+                'rooms': p.get('rooms'),
+                'size': p.get('size'),
+                'phone': p.get('phone', ''),
+                'city': p.get('city', ''),
+                'url': p.get('url', ''),
+                'created_at': p.get('created_at', '')
+            } for p in properties
+        ]
+    except Exception as e:
+        logging.error(f"Supabase API error in get_apartments: {e}")
+        return jsonify({
+            "error": "Database connection failed. Please check your Supabase project status.",
+            "details": str(e),
+            "apartments": []
+        }), 500
     
     for apartment in apartments:
         if apartment['created_at']:

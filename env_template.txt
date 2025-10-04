@@ -1,0 +1,26 @@
+# Database Configuration
+# MongoDB Connection String
+MONGO_CONNECTION_STRING=mongodb://localhost:27017/apartment_hunter
+MONGO_URL=mongodb://localhost:27017/apartment_hunter
+
+# PostgreSQL/Supabase Configuration
+# Replace with your actual Supabase connection details
+SQLALCHEMY_DATABASE_URI=postgresql://username:password@localhost:5432/apartment_hunter
+POSTGRES_URL=postgresql://username:password@localhost:5432/apartment_hunter
+
+# Facebook Credentials
+FB_USERNAME=your_facebook_email@example.com
+FB_PASSWORD=your_facebook_password
+
+# Email Configuration
+GOOGLE_APP_PASSWORD=your_google_app_password
+EMAIL_ADDRESS=your_email@gmail.com
+EMAIL_RECIPIENTS=recipient1@example.com,recipient2@example.com
+
+# OpenAI Configuration
+OPENAI_API_KEY=your_openai_api_key_here
+
+# Development/Production Environment
+FLASK_ENV=development
+FLASK_DEBUG=True
+

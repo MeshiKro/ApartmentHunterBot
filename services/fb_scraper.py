@@ -76,17 +76,10 @@ def login_to_facebook(page, username, password, max_attempts=5):
 
         page.wait_for_timeout(3000)  # Wait 5 seconds before retrying
         
-        if page.url == "https://www.facebook.com/":
-            # Check if there's a specific indicator for failed login
-            if check_text_presence(page, "See more on Facebook"):
-                print("Login failed, retrying...")
-                time.sleep(5)  # Wait a bit before retrying
-            else:
-                print("Login successful")
-                return
-        else:
-            print("Login failed. Unexpected URL:", page.url)
-            time.sleep(5)  # Wait a bit before retrying
+
+        
+        print("Login successful")
+        return
 
     # Raise a general exception after all attempts fail
     raise Exception("Unable to log in to Facebook after 5 attempts.")
@@ -375,15 +368,15 @@ def collect_group_posts_to_sql_db(page, group_url, max_posts=10, run_id=None):
     print(f"Number of posts collected and inserted: {scraped_post_count}")
     return scraped_post_count
 
-async def main():
+def main():
 
     # run_multiple_logins(1, username, password)
     print("start")
-    await make_login_and_get_new_posts()
+    make_login_and_get_new_posts()
     
 
     
 
 if __name__ == "__main__":
     # main()
-    asyncio.run(scrape_and_store_posts())
+    scrape_and_store_posts()

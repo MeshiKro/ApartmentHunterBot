@@ -5,7 +5,7 @@ from email.mime.text import MIMEText
 from dotenv import load_dotenv
 
 # הוספת נתיב לפרויקט (לפי הצורך)
-sys.path.append('/mnt/c/Projects/ApartmentHunterBot')
+sys.path.append(r'C:\meshi\ApartmentHunterBot')
 
 # טען את כל הערכים מה-.env
 load_dotenv()
