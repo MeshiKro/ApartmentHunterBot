@@ -18,11 +18,16 @@ from flaskr.models.post import check_exists, get_posts_by_filter, insert_post, u
 # from flaskr.extensions import socketio  # Import socketio
 
 group_links = [
+    # טירת כרמל
     "https://www.facebook.com/groups/150903262296830/?sorting_setting=CHRONOLOGICAL",   # דירות להשכרה בטירת כרמל
-    "https://www.facebook.com/groups/171730669920083/?sorting_setting=CHRONOLOGICAL"    # דירות להשכרה בין חברים טירת כרמל
+    "https://www.facebook.com/groups/171730669920083/?sorting_setting=CHRONOLOGICAL",   # דירות להשכרה בין חברים טירת כרמל
+
+    # חיפה
+    "https://www.facebook.com/groups/haifa.apartments.for.rent/",   # דירות להשכרה בחיפה
+    "https://www.facebook.com/groups/HaifaRentals/",                 # דירות להשכרה בחיפה - קבוצה נוספת
 ]
 
-filters = []
+filters = ["להשכרה","3 חדרים","4 חדרים"]
 
 def get_env_path() -> str:
     # Get the directory of the current script
@@ -256,8 +261,6 @@ def send_email_with_new_posts():
     
     new_posts = get_posts_by_filter(filter_criteria=filter)
     
-    sender = 'daniel1maymon@gmail.com'
-    recipients = [sender]
     subject = "פוסטים לדירות בפייסבוק"
     
     if not new_posts:
@@ -267,7 +270,7 @@ def send_email_with_new_posts():
         print(f"\n--------- Sending email with the new posts ({len(new_posts)} found) --------- \n")
         msg = email_functions.format_posts_for_email(posts=new_posts)
         
-        email_functions.send_email(subject=subject, body=msg, sender=sender, recipients=recipients)
+        email_functions.send_email(subject=subject, body=msg)
     
         # Marking the nre posts as sent
         mark_posts_as_sent()
