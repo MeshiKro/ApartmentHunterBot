@@ -30,12 +30,12 @@ def create_app():
     app = Flask(__name__)
     
     # Load configuration
-    app.config["MONGO_URI"] = os.getenv(key="MONGO_URL")
-    
+    app.config["MONGO_URI"] = os.getenv("MONGO_CONNECTION_STRING")
+ 
     # Initialize MongoClient once and store it in app.config
-    app.config['MONGO_CLIENT'] = MongoClient(os.getenv(key="MONGO_URL"))
-    
-    # Set up the MySQL database URI using environment variables
+    app.config['MONGO_CLIENT'] =  MongoClient(os.getenv("MONGO_CONNECTION_STRING"))
+
+    # # Set up the MySQL database URI using environment variables
     app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("SQLALCHEMY_DATABASE_URI")
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 

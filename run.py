@@ -3,7 +3,7 @@ import os
 
 
 # Add the path to the project directory
-sys.path.append('/mnt/c/Projects/ApartmentHunterBot')
+sys.path.append('C:\meshi\ApartmentHunterBot')
 
 from flaskr import create_app
 

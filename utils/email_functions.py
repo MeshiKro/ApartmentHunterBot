@@ -13,7 +13,7 @@ load_dotenv()
 # קריאה של משתנים מה-.env
 APP_PASSWORD = os.getenv("GOOGLE_APP_PASSWORD")          # סיסמה לאפליקציה
 SENDER_EMAIL = os.getenv("EMAIL_ADDRESS")               # כתובת השולח
-RECIPIENTS = os.getenv("EMAIL_RECIPIENTS", SENDER_EMAIL).split(",")  # רשימת מקבלים מופרדת בפסיקים
+RECIPIENTS = os.getenv("EMAIL_RECIPIENTS")  # רשימת מקבלים מופרדת בפסיקים
 
 # תוכן המייל
 BODY = "Hello my name is Slim Shady"
