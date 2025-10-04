@@ -378,6 +378,7 @@ def collect_group_posts_to_sql_db(page, group_url, max_posts=10, run_id=None):
 async def main():
 
     # run_multiple_logins(1, username, password)
+    print("start")
     await make_login_and_get_new_posts()
     
 

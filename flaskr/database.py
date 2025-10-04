@@ -14,4 +14,4 @@ def init_app(app):
     mongo.init_app(app=app)
     
     # Bind the SQLAlchemy instance to Flask app
-   # mySQL_db.init_app(app)
+    mySQL_db.init_app(app)
